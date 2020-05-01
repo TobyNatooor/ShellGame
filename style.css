@@ -1,0 +1,73 @@
+
+body {
+    background-color: lightslategrey;
+}
+
+.test {
+    background-color: lime;
+}
+
+#box1 {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border-color: gray;
+    position: absolute;
+    transform: translate(0px, 0px);
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+#box2 {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border-color: gray;
+    position: absolute;
+    transform: translate(250px, 0px);
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+#box3 {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border-color: gray;
+    position: relative;
+    transform: translate(500px, 0px);
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes theFirst {
+    0% {transform: translate(0px, 0px);}
+    100% {transform: translate(250px, 0px);}
+}
+
+@keyframes theSecond {
+    0% {transform: translate(500px, 0px);}
+    100% {transform: translate(250px, 0px);}
+}
+
+@keyframes theThird {
+    0% {transform: translate(250px, 0px);}
+    100% {transform: translate(0px, 0px);}
+}
+
+@keyframes theFourth {
+    0% {transform: translate(250px, 0px);}
+    100% {transform: translate(500px, 0px);}
+}
