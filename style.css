@@ -16,11 +16,9 @@ body {
     transform: translate(0px, 0px);
     border-top-right-radius: 40%;
     border-top-left-radius: 40%;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    
+    border: 4px solid rgb(82, 82, 82);
 }
+
 
 #box2 {
     width: 200px;
@@ -31,10 +29,9 @@ body {
     transform: translate(250px, 0px);
     border-top-right-radius: 40%;
     border-top-left-radius: 40%;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    
+    border: 4px solid rgb(82, 82, 82);
+    animation-name: Start;
+    animation-duration: 5s;
 }
 
 #box3 {
@@ -46,10 +43,14 @@ body {
     transform: translate(500px, 0px);
     border-top-right-radius: 40%;
     border-top-left-radius: 40%;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    
+    border: 4px solid rgb(82, 82, 82);
+}
+
+@keyframes Start {
+    0% {background-color: green;}
+    70% {background-color: green;}
+    100%{}
+
 }
 
 @keyframes theFirst {
