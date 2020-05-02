@@ -47,13 +47,25 @@ window.onload = function() {
         Order[2].style.transform = "translate(500px, 0px)";
         console.log("clicked");
     }
+
+    function outAnimation() {
+        document.getElementById("box3").classList.add("transistion");
+        document.getElementById("box1").classList.add("transistion");
+    }
+
     Order[0].addEventListener("click", function(){
         WinLose.innerHTML = "You lose!";
+        document.getElementById("WinLose").classList.add("fadeIn");
+        outAnimation()
     });
     Order[1].addEventListener("click", function(){
         WinLose.innerHTML = "You win!";
+        document.getElementById("WinLose").classList.add("fadeIn");
+        outAnimation()
     });
     Order[2].addEventListener("click", function(){
         WinLose.innerHTML = "You lose!";
+        document.getElementById("WinLose").classList.add("fadeIn");
+        outAnimation()
     });
 }
