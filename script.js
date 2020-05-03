@@ -1,18 +1,10 @@
-
-/*
-box1.style.transform = "translate(250px, 0px)";
-box2.style.transform = "translate(0px, 0px)";
-setTimeout(function(){
-    box1.style.transform = "translate(500px, 0px)";
-    box3.style.transform = "translate(250px, 0px)";
-}, 2100);
-box1.style.animation = "theFirst 2s forwards";
-box2.style.animation = "theThird 2s forwards";
-setTimeout(function(){box2.style.animation = "theFourth 2s forwards";}, 2500);
-setTimeout(function(){box3.style.animation = "theSecond 2s forwards";}, 2500);
-box1.classList.add("test");
-document.getElementById("box1").style.animation = "theSecond";
-*/
+        /*
+        num1 = 0;
+        num2 = 0;
+        document.getElementById("box2").style.backgroundColor = "green";
+        document.getElementById("Explanation").style.opacity = "1";
+        WinLose.style.opacity = "0";
+        */
 
 window.onload = function () {
 
@@ -22,34 +14,37 @@ window.onload = function () {
         document.getElementById("box3"),
         4
     ];
-    let Explanation = document.getElementById("Explanation");
     let WinLose = document.getElementById("WinLose");
-    let Time = 550;
     let Stop = 0;
-    let shuffleAmount = 10;
-    let num = 0;
+    let num1 = 0;
+    let num2 = 0;
     let loseOrWin;
 
+    let Time = 550;
+    let shuffleAmount = 10;
+
     btn.addEventListener("click", function () {
-        Order[1].style.backgroundColor = "black";
-        Explanation.style.color = "black";
-        let shuffle = setInterval(function () {
-            if (Math.floor(Math.random() * 2) == 0) {
-                Order[3] = Order[0];
-                Order[0] = Order[1];
-                Order[1] = Order[3];
-            } else {
-                Order[3] = Order[1];
-                Order[1] = Order[2];
-                Order[2] = Order[3];
-            }
-            theAnimation()
-            Stop++;
-            if (Stop > shuffleAmount) {
-                clearInterval(shuffle);
-                num++
-            }
-        }, Time);
+        if (num2 == 1) {
+            Order[1].style.backgroundColor = "black";
+            document.getElementById("Explanation").style.color = "black";
+            let shuffle = setInterval(function () {
+                if (Math.floor(Math.random() * 2) == 0) {
+                    Order[3] = Order[0];
+                    Order[0] = Order[1];
+                    Order[1] = Order[3];
+                } else {
+                    Order[3] = Order[1];
+                    Order[1] = Order[2];
+                    Order[2] = Order[3];
+                }
+                theAnimation()
+                Stop++;
+                if (Stop > shuffleAmount) {
+                    clearInterval(shuffle);
+                    num1++
+                }
+            }, Time);
+        }
     });
 
     function theAnimation() {
@@ -75,8 +70,42 @@ window.onload = function () {
         cupClicked()
     });
 
+    function btnWhite() {
+        document.getElementById("Easy").style.backgroundColor = "white";
+        document.getElementById("Medium").style.backgroundColor = "white";
+        document.getElementById("Hard").style.backgroundColor = "white";
+    }
+
+    document.getElementById("Easy").addEventListener("click", function () {
+        btnWhite();
+        document.getElementById("Easy").style.backgroundColor = "green";
+        Time = 800;
+        shuffleAmount = 10;
+        num2 = 1;
+    });
+
+    document.getElementById("Medium").addEventListener("click", function () {
+        btnWhite();
+        document.getElementById("Medium").style.backgroundColor = "yellow";
+        Time = 500;
+        shuffleAmount = 15;
+        num2 = 1;
+    });
+
+    document.getElementById("Hard").addEventListener("click", function () {
+        btnWhite();
+        document.getElementById("Hard").style.backgroundColor = "red";
+        Time = 350;
+        shuffleAmount = 25;
+        num2 = 1;
+    });
+
+    document.getElementById("restart").addEventListener("click", function () {
+        window.location.reload();
+    });
+
     function cupClicked() {
-        if (num == 1) {
+        if (num1 == 1) {
             WinLose.innerHTML = loseOrWin;
             document.getElementById("WinLose").classList.add("fadeIn");
             outAnimation()
