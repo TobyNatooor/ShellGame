@@ -1,6 +1,6 @@
 
 body {
-    background-color: #aaaaaa;
+    background-color: #dddddd;
     margin: 0px 0px;
     padding: 0px 0px;
     display: grid;
@@ -23,6 +23,7 @@ p {
     margin: 0px;
     text-align: center;
     padding: 0px 0px 5px;
+    transition-duration: 2s;
 }
 
 #box1, #box2, #box3 {
@@ -35,20 +36,20 @@ p {
     border-top-left-radius: 50%;
     border: 5px solid rgb(82, 82, 82);
     flex-direction: row;
-
+    transition-duration: 0.5s;
+    order: 1;
 }
 
 #box2 {
     background-color: green;
     transform: translate(250px, 0px);
+    order: 2;
 }
 
 #box3 {
     transform: translate(500px, 0px);
-}
-
-#box4 {
-    transform: translate(750px, 0px);
+    order: 3;
+    
 }
 
 .container {
@@ -72,10 +73,10 @@ output {
     font-size: 80px;
 }
 
-.transistion {
-    transition-duration: 4s;
-    transform: rotate(45deg);
-    transform: translateY(-250px); 
+.transition {
+    transition-duration: 1.5s;
+    transform: translateY(200px);
+    transition-timing-function: cubic-bezier(.61,-0.37,1,.7);
     opacity: 0;
 }
 
@@ -89,3 +90,14 @@ output {
     100% {opacity: 1;}
 }
 
+
+/*
+.test {
+    animation: test 3s;
+}
+
+@keyframes test {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+}
+*/

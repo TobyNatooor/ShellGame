@@ -20,62 +20,66 @@ window.onload = function () {
         document.getElementById("box1"),
         document.getElementById("box2"),
         document.getElementById("box3"),
-        4];
+        4
+    ];
     let Explanation = document.getElementById("Explanation");
     let WinLose = document.getElementById("WinLose");
-    let Time = 600;
-    Order[0].style.transitionDuration = "0.5s";
-    Order[1].style.transitionDuration = "0.5s";
-    Order[2].style.transitionDuration = "0.5s";
-    Explanation.style.transitionDuration = "2s";
+    let Time = 550;
+    let Stop = 0;
+    let shuffleAmount = 10;
+    let num = 0;
+    let loseOrWin;
 
     btn.addEventListener("click", function () {
         Order[1].style.backgroundColor = "black";
         Explanation.style.color = "black";
-        for (let i = 0; 1 > i; i++) {
+        let shuffle = setInterval(function () {
             if (Math.floor(Math.random() * 2) == 0) {
                 Order[3] = Order[0];
                 Order[0] = Order[1];
                 Order[1] = Order[3];
-                console.log("test");
             } else {
                 Order[3] = Order[1];
                 Order[1] = Order[2];
                 Order[2] = Order[3];
-                console.log("test");
             }
-            //setTimeout(function () {
-                theAnimation()
-                Time += 600;
-                console.log(Time);
-            //}, Time);
-        }
+            theAnimation()
+            Stop++;
+            if (Stop > shuffleAmount) {
+                clearInterval(shuffle);
+                num++
+            }
+        }, Time);
     });
+
     function theAnimation() {
         Order[0].style.transform = "translate(0px, 0px)";
         Order[1].style.transform = "translate(250px, 0px)";
         Order[2].style.transform = "translate(500px, 0px)";
-        console.log("animation");
     }
 
     function outAnimation() {
-        document.getElementById("box3").classList.add("transistion");
-        document.getElementById("box1").classList.add("transistion");
+        document.getElementById("theDiv").classList.add("transition");
     }
 
     Order[0].addEventListener("click", function () {
-        WinLose.innerHTML = "You lose!";
-        document.getElementById("WinLose").classList.add("fadeIn");
-        outAnimation()
+        loseOrWin = "You lose!"
+        cupClicked()
     });
     Order[1].addEventListener("click", function () {
-        WinLose.innerHTML = "You win!";
-        document.getElementById("WinLose").classList.add("fadeIn");
-        outAnimation()
+        loseOrWin = "You win!"
+        cupClicked()
     });
     Order[2].addEventListener("click", function () {
-        WinLose.innerHTML = "You lose!";
-        document.getElementById("WinLose").classList.add("fadeIn");
-        outAnimation()
+        loseOrWin = "You lose!"
+        cupClicked()
     });
+
+    function cupClicked() {
+        if (num == 1) {
+            WinLose.innerHTML = loseOrWin;
+            document.getElementById("WinLose").classList.add("fadeIn");
+            outAnimation()
+        }
+    }
 }
