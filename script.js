@@ -50,9 +50,9 @@ window.onload = function () {
 
     // Rearrange the shells
     function theAnimation() {
-        Order[0].style.transform = "translateX(-180%)";
-        Order[1].style.transform = "translateX(-50%)";
-        Order[2].style.transform = "translateX(80%)";
+        Order[0].style.transform = "translateX(0%)";
+        Order[1].style.transform = "translateX(137.5%)";
+        Order[2].style.transform = "translateX(270%)";
     }
 
     // Transition out 2 shells
