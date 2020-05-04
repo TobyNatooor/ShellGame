@@ -1,10 +1,10 @@
-        /*
-        num1 = 0;
-        num2 = 0;
-        document.getElementById("box2").style.backgroundColor = "green";
-        document.getElementById("Explanation").style.opacity = "1";
-        WinLose.style.opacity = "0";
-        */
+/*
+num1 = 0;
+num2 = 0;
+document.getElementById("box2").style.backgroundColor = "green";
+document.getElementById("Explanation").style.opacity = "1";
+WinLose.style.opacity = "0";
+*/
 
 window.onload = function () {
 
@@ -23,6 +23,7 @@ window.onload = function () {
     let Time = 550;
     let shuffleAmount = 10;
 
+    // Click shuffle
     btn.addEventListener("click", function () {
         if (num2 == 1) {
             Order[1].style.backgroundColor = "black";
@@ -47,16 +48,19 @@ window.onload = function () {
         }
     });
 
+    // Rearrange the shells
     function theAnimation() {
-        Order[0].style.transform = "translate(0px, 0px)";
-        Order[1].style.transform = "translate(250px, 0px)";
-        Order[2].style.transform = "translate(500px, 0px)";
+        Order[0].style.transform = "translateX(-180%)";
+        Order[1].style.transform = "translateX(-50%)";
+        Order[2].style.transform = "translateX(80%)";
     }
 
+    // Transition out 2 shells
     function outAnimation() {
         document.getElementById("theDiv").classList.add("transition");
     }
 
+    // Win or lose output
     Order[0].addEventListener("click", function () {
         loseOrWin = "You lose!"
         cupClicked()
@@ -70,12 +74,14 @@ window.onload = function () {
         cupClicked()
     });
 
+    // Difficulty buttons color 
     function btnWhite() {
         document.getElementById("Easy").style.backgroundColor = "white";
         document.getElementById("Medium").style.backgroundColor = "white";
         document.getElementById("Hard").style.backgroundColor = "white";
     }
 
+    // Difficulties
     document.getElementById("Easy").addEventListener("click", function () {
         btnWhite();
         document.getElementById("Easy").style.backgroundColor = "green";
@@ -83,7 +89,6 @@ window.onload = function () {
         shuffleAmount = 10;
         num2 = 1;
     });
-
     document.getElementById("Medium").addEventListener("click", function () {
         btnWhite();
         document.getElementById("Medium").style.backgroundColor = "yellow";
@@ -91,7 +96,6 @@ window.onload = function () {
         shuffleAmount = 15;
         num2 = 1;
     });
-
     document.getElementById("Hard").addEventListener("click", function () {
         btnWhite();
         document.getElementById("Hard").style.backgroundColor = "red";
@@ -100,10 +104,12 @@ window.onload = function () {
         num2 = 1;
     });
 
+    // Restart button
     document.getElementById("restart").addEventListener("click", function () {
         window.location.reload();
     });
 
+    // Clicked shell
     function cupClicked() {
         if (num1 == 1) {
             WinLose.innerHTML = loseOrWin;
