@@ -36,6 +36,7 @@ p {
     min-height: 22rem;
     height: 28%;
     width: 24%;
+    min-width: 20rem;
     max-width: 24.5rem;
     background-color: black;
     border-color: gray;
@@ -97,7 +98,7 @@ output {
 }
 
 .transition {
-    transition-duration: 2.5s;
+    transition-duration: 1s;
     transform: translateY(30rem);
     transition-timing-function: cubic-bezier(.54,-0.57,1,.7);
     opacity: 0;
