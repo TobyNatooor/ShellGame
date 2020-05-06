@@ -1,14 +1,13 @@
 
+*, * ::before, * ::after {box-sizing: border-box;}
 
 html {
     font-size: 62.5%;
 }
 
 body {
-    background-color: #dddddd;
     margin: 0rem;
     padding: 0rem;
-    display: grid;
 }
 
 #theTitle {
@@ -19,7 +18,7 @@ body {
     font-size: 8vw;
 }
 
-p {
+#Explanation {
     background-color: black;
     color: white;
     text-align: center;
@@ -27,66 +26,74 @@ p {
     font-size: 2vw;
 }
 
-#box1, #box2, #box3 {
+div.container {
+    max-width: 2000px;
+    height: 100vw;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    background-color: #dddddd;
+}
+
+div.container div.boxCon {
+    margin: 0 auto 2% auto;
+    width: 80%;
     height: 20vw;
-    width: 23vw;
+    max-height: 450px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+div.container div.boxCon div.theBox{
+    height: 100%;
+    width: 30%;
     background-color: black;
     border-color: gray;
-    position: absolute;
+    border: 0.5vw solid rgb(82, 82, 82);
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
-    border: 0.5vw solid rgb(82, 82, 82);
-    transform: translateX(0%);
-    flex-direction: row;
     transition-duration: 0.3s;
-    order: 1;
+    grid-row-start: 1;
+    grid-column-start: 1;
 }
 
-#box2 {
-    background-color: green;
-    transform: translateX(137.5%);
-    order: 2;
-}
+div#box1 {order: 1; transform: translateX(0%);}
+div#box2 {order: 2; transform: translateX(117%); background-color: green;}
+div#box3 {order: 3; transform: translateX(234%);} 
 
-#box3 {
-    transform: translateX(275%);
-    order: 3;
-}
-
-.container {
-    margin: 2rem auto 1rem auto;
-    height: 22vw;
-    width: 90vw;
+.btnCon {
+    margin: auto;
 }
 
 button {
     width: 10vw;
     height: 4vw;
     font-size: 2vw;
-    margin: auto;
     border: 2px solid black;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#shuffle {
+    margin: 0 6vw 0 0;
 }
 
 #restart {
-    margin: 0rem 0rem 0rem 5rem;
+    margin: 0 0 0 6vw;
 }
 
-#invis {
-    margin: 0rem 5rem 0rem 0rem;
-    opacity: 0;
-}
-
-.btncontainer {
-    margin: 0px auto 1rem auto;
-}
-
-
-
-output {
-    margin: 10px auto;
+#WinLose {
+    height: 10vw;
+    margin: 30px 20% 0 20%;
     border: 2px solid black;
     opacity: 0;
-    font-size: 80px;
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
 }
 
 .transition {

@@ -1,10 +1,3 @@
-/*
-num1 = 0;
-num2 = 0;
-document.getElementById("box2").style.backgroundColor = "green";
-document.getElementById("Explanation").style.opacity = "1";
-WinLose.style.opacity = "0";
-*/
 
 window.onload = function () {
 
@@ -19,12 +12,11 @@ window.onload = function () {
     let num1 = 0;
     let num2 = 0;
     let loseOrWin;
-
-    let Time = 550;
-    let shuffleAmount = 10;
+    let Time;
+    let shuffleAmount;
 
     // Click shuffle
-    btn.addEventListener("click", function () {
+    shuffle.addEventListener("click", function () {
         if (num2 == 1) {
             Order[1].style.backgroundColor = "black";
             document.getElementById("Explanation").style.color = "black";
@@ -51,13 +43,14 @@ window.onload = function () {
     // Rearrange the shells
     function theAnimation() {
         Order[0].style.transform = "translateX(0%)";
-        Order[1].style.transform = "translateX(137.5%)";
-        Order[2].style.transform = "translateX(270%)";
+        Order[1].style.transform = "translateX(117%)";
+        Order[2].style.transform = "translateX(234%)";
     }
 
     // Transition out 2 shells
     function outAnimation() {
-        document.getElementById("theDiv").classList.add("transition");
+        document.getElementById("box1").classList.add("transition");
+        document.getElementById("box2").classList.add("transition");
     }
 
     // Win or lose output
@@ -111,7 +104,7 @@ window.onload = function () {
 
     // Clicked shell
     function cupClicked() {
-        if (num1 == 1) {
+        if (num1 >= 1) {
             WinLose.innerHTML = loseOrWin;
             document.getElementById("WinLose").classList.add("fadeIn");
             outAnimation()
