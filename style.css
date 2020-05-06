@@ -27,7 +27,7 @@ body {
 }
 
 div.container {
-    max-width: 2000px;
+    max-width: 1000px;
     height: 100vw;
     margin: 0 auto;
     padding: 30px 0 0 0;
@@ -38,7 +38,7 @@ div.container div.boxCon {
     margin: 0 auto 2% auto;
     width: 80%;
     height: 20vw;
-    max-height: 450px;
+    max-height: 200px;
     display: grid;
     grid-template-columns: 1fr;
 
@@ -61,14 +61,14 @@ div#box1 {order: 1; transform: translateX(0%);}
 div#box2 {order: 2; transform: translateX(117%); background-color: green;}
 div#box3 {order: 3; transform: translateX(234%);} 
 
-.btnCon {
+div.btnCon {
     margin: auto;
 }
 
 button {
-    width: 10vw;
-    height: 4vw;
-    font-size: 2vw;
+    width: 10%;
+    height: 8%;
+    font-size: 200%;
     border: 2px solid black;
 }
 
