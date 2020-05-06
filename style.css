@@ -66,9 +66,9 @@ div.btnCon {
 }
 
 button {
-    width: 10%;
+    width: 15%;
     height: 8%;
-    font-size: 200%;
+    font-size: 2vw;
     border: 2px solid black;
 }
 
