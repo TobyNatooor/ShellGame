@@ -6,8 +6,8 @@ html {
 }
 
 body {
-    margin: 0rem;
-    padding: 0rem;
+    margin: 0;
+    padding: 0;
 }
 
 #theTitle {
@@ -37,8 +37,8 @@ div.container {
 div.container div.boxCon {
     margin: 0 auto 2% auto;
     width: 80%;
-    height: 20vw;
-    max-height: 200px;
+    height: 30vw;
+    max-height: 35rem;
     display: grid;
     grid-template-columns: 1fr;
 
