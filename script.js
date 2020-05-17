@@ -50,7 +50,7 @@ window.onload = function () {
     // Transition out 2 shells
     function outAnimation() {
         document.getElementById("box1").classList.add("transition");
-        document.getElementById("box2").classList.add("transition");
+        document.getElementById("box3").classList.add("transition");
     }
 
     // Win or lose output
