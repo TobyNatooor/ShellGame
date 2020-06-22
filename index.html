@@ -5,31 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <title>Shell Game</title>
 </head>
 
 <body>
 
     <h1 id="theTitle">Shell Game</h1>
-    <p id="Explanation">Click Shuffle and find the green shell</p>
-
+    <p id="Explanation">Choose a difficulty, press 'Shuffle' and see if you can find the green shell when the shells
+        have shuffled</p>
     <div class="container">
-        <div class="boxCon">
+        <div class="boxContainer">
             <div id="box1" class="theBox"></div>
             <div id="box2" class="theBox"></div>
             <div id="box3" class="theBox"></div>
         </div>
-        <div class="btnCon" id="appendTo">
-            <div class="row">
-                <button id="shuffle">Shuffle</button>
-                <button id="Easy">Easy</button>
-                <button id="Medium">Medium</button>
-                <button id="Hard">Hard</button>
-                <button id="restart">Restart</button>
-            </div>
-            <p id="WinLose"></p>
+        <div class="buttonContainer">
+            <button id="shuffle">Shuffle</button>
+            <button id="Easy">Easy</button>
+            <button id="Medium">Medium</button>
+            <button id="Hard">Hard</button>
+            <button id="restart">Restart</button>
         </div>
+        <output id="WinLose"></output>
     </div>
 
 </body>

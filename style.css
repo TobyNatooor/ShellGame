@@ -1,114 +1,118 @@
-
-*, * ::before, * ::after {box-sizing: border-box;}
-
-html {
+*, * ::before, * ::after {
+    box-sizing: border-box;
     font-size: 62.5%;
-}
-
-body {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #theTitle {
     background-color: black;
     color: white;
-    text-align: center;
-    margin: 0;
-    font-size: 8vw;
+    font-size: clamp(6rem, 5vw, 10rem);
 }
 
 #Explanation {
     background-color: black;
     color: white;
-    text-align: center;
-    margin: 0;
-    font-size: 2vw;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-div.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 0 0 0;
-    background-color: #dddddd;
+.container {
+    max-width: min(720px, 80%);
+    margin: auto;
+    margin-top: clamp();
 }
 
-div.container div.boxCon {
-    margin: 0 auto 2% auto;
-    width: 80%;
-    height: 30vw;
-    max-height: 35rem;
+.boxContainer {
+    margin: 30px auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-
 }
 
-div.container div.boxCon div.theBox{
-    height: 100%;
+.theBox {
     width: 30%;
+    height: 100%;
     background-color: black;
     border-color: gray;
-    border: 0.5vw solid rgb(82, 82, 82);
+    border: 3px solid rgb(70, 69, 69);
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
     transition-duration: 0.3s;
     grid-row-start: 1;
     grid-column-start: 1;
+    padding: 0 0 40% 0;
 }
 
-div#box1 {order: 1; transform: translateX(0%);}
-div#box2 {order: 2; transform: translateX(117%); background-color: green;}
-div#box3 {order: 3; transform: translateX(234%);} 
+#box1 {
+    order: 1;
+    transform: translateX(0%);
+}
 
-div.btnCon {
-    margin: auto;
+#box2 {
+    order: 2;
+    transform: translateX(117%);
+    background-color: green;
+}
+
+#box3 {
+    order: 3;
+    transform: translateX(234%);
 }
 
 button {
-    width: 15%;
-    height: 8%;
-    font-size: 2vw;
+    width: 20%;
+    height: 4rem;
+    font-size: clamp(1.2rem, 2vw, 2rem);
     border: 2px solid black;
+    transition-duration: 0.2s;
 }
 
-.row {
+button:hover {
+    background-color: rgb(196, 194, 194);
+}
+
+.buttonContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 #shuffle {
-    margin: 0 6vw 0 0;
+    margin: 0 3% 0 0;
 }
 
 #restart {
-    margin: 0 0 0 6vw;
+    margin: 0 0 0 3%;
 }
 
 #WinLose {
-    height: 10vw;
-    margin: auto;
-    border: 2px solid black;
     opacity: 0;
-    font-size: 8vw;
-    text-align: center;
-    background-color: #dddddd;
+    font-size: clamp(3rem, 4vw, 4rem);
+    height: 8rem;
+    margin: 30px 20% 0 20%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .transition {
     transition-duration: 1s;
-    transform: translateY(30rem);
-    transition-timing-function: cubic-bezier(.54,-0.57,1,.7);
     opacity: 0;
 }
 
 .fadeIn {
     animation: fadeIn 4s;
     animation-fill-mode: forwards;
-    transform: translateY(-270%);
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
